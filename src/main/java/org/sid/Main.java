@@ -4,7 +4,6 @@ import org.sid.builder.Transaction;
 import org.sid.builder.TransactionType;
 import org.sid.observer.Agent;
 import org.sid.singleton.Container;
-import org.sid.strategy.HistoryStrategy;
 import org.sid.strategy.ScoringStrategy;
 import org.sid.adapter.ConsoleDisplay;
 import org.sid.adapter.VGADisplay;

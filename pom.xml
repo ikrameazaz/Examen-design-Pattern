@@ -42,17 +42,22 @@
 
     <build>
         <plugins>
-            <!-- AspectJ Maven Plugin -->
             <plugin>
                 <groupId>dev.aspectj</groupId>
                 <artifactId>aspectj-maven-plugin</artifactId>
                 <version>1.14</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjtools</artifactId>
+                        <version>${aspectj.version}</version>
+                    </dependency>
+                </dependencies>
                 <configuration>
                     <complianceLevel>21</complianceLevel>
-                    <source>21</source>
-                    <target>21</target>
                     <showWeaveInfo>true</showWeaveInfo>
                     <verbose>true</verbose>
+                    <encoding>UTF-8</encoding>
                 </configuration>
                 <executions>
                     <execution>
