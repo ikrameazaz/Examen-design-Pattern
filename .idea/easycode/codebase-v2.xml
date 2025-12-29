@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="com.obiscr.chatgpt.settings.EasyCodeState">
+    <option name="projectFiles" value="$PROJECT_DIR$/src/main/java/org/sid/model/Transaction.java;C:/Users/ikrame/Dev/design-pattern-exam/src/main/java/org/sid/model/TransactionEvent.java;C:/Users/ikrame/Dev/design-pattern-exam/src/main/java/org/sid/model/TransactionType.java;C:/Users/ikrame/Dev/design-pattern-exam/src/main/java/org/sid/strategy/DefaultStrategy.java;C:/Users/ikrame/Dev/design-pattern-exam/src/main/java/org/sid/strategy/HistoryStrategy.java;C:/Users/ikrame/Dev/design-pattern-exam/src/main/java/org/sid/strategy/NotificationStrategy.java;C:/Users/ikrame/Dev/design-pattern-exam/src/main/java/org/sid/strategy/ScoringStrategy.java;C:/Users/ikrame/Dev/design-pattern-exam/src/main/java/org/sid/strategy/StrategyFactory.java;C:/Users/ikrame/Dev/design-pattern-exam/src/main/java/org/sid/Main.java" />
+  </component>
+</project>
