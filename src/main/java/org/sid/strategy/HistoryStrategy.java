@@ -1,30 +1,23 @@
 package org.sid.strategy;
 
-import org.sid.agent.Agent;
-import org.sid.models.Transaction;
-
+import org.sid.builder.Transaction;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class HistoryStrategy implements NotificationStrategy {
-    private final List<Transaction> historique = new ArrayList<>();
+    private List<Transaction> historique = new ArrayList<>();
 
     @Override
-    public void handleNotification(Agent source, Transaction transaction) {
+    public void handleNotification(String agentSource, Transaction transaction) {
         historique.add(transaction);
-        System.out.println("[HistoryStrategy] Transaction ajoutée. Historique: " + historique.size());
+        System.out.println("Historique: " + historique.size() + " transactions");
     }
 
     public List<Transaction> getHistorique() {
-        return Collections.unmodifiableList(historique);
+        return historique;
     }
 
     public int getHistoriqueSize() {
         return historique.size();
-    }
-
-    public void clearHistorique() {
-        historique.clear();
     }
 }

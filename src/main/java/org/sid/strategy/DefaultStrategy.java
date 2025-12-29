@@ -1,12 +1,11 @@
 package org.sid.strategy;
 
-import org.sid.agent.Agent;
-import org.sid.models.Transaction;
+import org.sid.builder.Transaction;
 
 public class DefaultStrategy implements NotificationStrategy {
 
     @Override
-    public void handleNotification(Agent source, Transaction transaction) {
-        System.out.println("[DefaultStrategy] Notification de " + source.getNom() + " : " + transaction);
+    public void handleNotification(String agentSource, Transaction transaction) {
+        System.out.println("Notification de " + agentSource + " : " + transaction);
     }
 }

@@ -1,13 +1,13 @@
-package org.sid.models;
+package org.sid.builder;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Transaction {
-    private final String id;
-    private final LocalDateTime date;
-    private final double montant;
-    private final TransactionType type;
+    private String id;
+    private LocalDateTime date;
+    private double montant;
+    private TransactionType type;
 
     private Transaction(String id, LocalDateTime date, double montant, TransactionType type) {
         this.id = id;
@@ -35,34 +35,15 @@ public class Transaction {
     @Override
     public String toString() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
-        return String.format("Transaction{id='%s', date=%s, montant=%.2f, type=%s}",
-                id, date.format(formatter), montant, type);
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o)
-            return true;
-        if (o == null || getClass() != o.getClass())
-            return false;
-        Transaction that = (Transaction) o;
-        return id != null && id.equals(that.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return id != null ? id.hashCode() : 0;
+        return "Transaction{id='" + id + "', date=" + date.format(formatter) +
+                ", montant=" + montant + ", type=" + type + "}";
     }
 
     public static class Builder {
         private String id;
-        private LocalDateTime date;
+        private LocalDateTime date = LocalDateTime.now();
         private double montant;
         private TransactionType type;
-
-        public Builder() {
-            this.date = LocalDateTime.now();
-        }
 
         public Builder setId(String id) {
             this.id = id;
@@ -85,17 +66,14 @@ public class Transaction {
         }
 
         public Transaction build() {
-            if (id == null || id.trim().isEmpty()) {
-                throw new IllegalStateException("L'id de la transaction est obligatoire");
-            }
-            if (date == null) {
-                throw new IllegalStateException("La date de la transaction est obligatoire");
+            if (id == null || id.isEmpty()) {
+                throw new IllegalStateException("Id obligatoire");
             }
             if (montant < 0) {
-                throw new IllegalStateException("Le montant ne peut pas être négatif");
+                throw new IllegalStateException("Montant negatif interdit");
             }
             if (type == null) {
-                throw new IllegalStateException("Le type de transaction est obligatoire");
+                throw new IllegalStateException("Type obligatoire");
             }
             return new Transaction(id, date, montant, type);
         }

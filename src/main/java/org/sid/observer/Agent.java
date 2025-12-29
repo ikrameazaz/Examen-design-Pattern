@@ -1,8 +1,8 @@
-package org.sid.agent;
+package org.sid.observer;
 
 import org.sid.aspects.annotations.Cachable;
 import org.sid.aspects.annotations.Log;
-import org.sid.models.Transaction;
+import org.sid.builder.Transaction;
 import org.sid.strategy.DefaultStrategy;
 import org.sid.strategy.NotificationStrategy;
 
@@ -23,6 +23,7 @@ public class Agent {
         this.strategy = new DefaultStrategy();
     }
 
+
     public void subscribe(Agent agent) {
         if (agent != null && !observateurs.contains(agent) && agent != this) {
             observateurs.add(agent);
@@ -35,12 +36,12 @@ public class Agent {
 
     private void notifyObservers(Transaction transaction) {
         for (Agent obs : observateurs) {
-            obs.update(this, transaction);
+            obs.update(this.nom, transaction);
         }
     }
 
-    public void update(Agent source, Transaction transaction) {
-        strategy.handleNotification(source, transaction);
+    public void update(String agentName, Transaction transaction) {
+        strategy.handleNotification(agentName, transaction);
     }
 
     public void setStrategy(NotificationStrategy strategy) {

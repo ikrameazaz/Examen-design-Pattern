@@ -1,8 +1,7 @@
 package org.sid.strategy;
 
-import org.sid.agent.Agent;
-import org.sid.models.Transaction;
+import org.sid.builder.Transaction;
 
 public interface NotificationStrategy {
-    void handleNotification(Agent source, Transaction transaction);
+    void handleNotification(String agentSource, Transaction transaction);
 }

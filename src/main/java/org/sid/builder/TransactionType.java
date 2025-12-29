@@ -1,4 +1,4 @@
-package org.sid.models;
+package org.sid.builder;
 
 public enum TransactionType {
     VENTE,
