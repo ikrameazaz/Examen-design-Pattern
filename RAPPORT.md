@@ -1,7 +1,7 @@
 # Rapport d'Examen : Design Patterns & AOP
 
-**Nom/Prénom :** [ VOTRE NOM ]
-**Date :** 29/12/2025
+**Nom/Prénom :** azaz ikrame
+
 
 ---
 
@@ -120,8 +120,6 @@ Transaction t = Transaction.builder()
         .build();
 ```
 
-**Preuve d'exécution :**
-> [INSÉRER ICI SCREENSHOT TEST TRANSACTION OU CONSOLE]
 
 ---
 
@@ -149,8 +147,7 @@ public class Agent {
 **Test unitaire :**
 Lorsqu'un agent ajoute une transaction, ses abonnés sont notifiés automatiquement.
 
-**Preuve d'exécution :**
-> [INSÉRER ICI SCREENSHOT TEST AGENT OU CONSOLE]
+
 
 ---
 
@@ -178,8 +175,7 @@ public class Container {
 **Test unitaire :**
 `Container.getInstance() == Container.getInstance()` retourne `true`.
 
-**Preuve d'exécution :**
-> [INSÉRER ICI SCREENSHOT TEST CONTAINER]
+
 
 ---
 
@@ -258,5 +254,3 @@ public Object checkSecurity(ProceedingJoinPoint joinPoint) {
 }
 ```
 
-**Preuve globale d'exécution (Console) :**
-> [INSÉRER ICI SCREENSHOT DE LA CONSOLE AVEC LES LOGS [LOG], [CACHE], ETC.]
